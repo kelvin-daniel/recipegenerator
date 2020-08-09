@@ -19,8 +19,13 @@ const APP_KEY = "c4bf2f4189cdeccfd044247c93baad3a";
     const getData = async() => {
         if(query !== ""){
             const result = await Axios.get(url)
+            if(!result.data.more){
+                return setAlert("Sorry, I Couldn't Find That")
+            }
+
             setRecipes(result.data.hits)
             console.log(result)
+            setAlert("")
             setQuery(""); 
         } else {
             setAlert("Sorry Didn't Get That")
