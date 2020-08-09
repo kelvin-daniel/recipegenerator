@@ -53,7 +53,6 @@ const APP_KEY = "c4bf2f4189cdeccfd044247c93baad3a";
             <div className="recipes">
               {recipes!==[]&& recipes.map(recipe => <Recipe key={uuidv4()} recipe={recipe}/>)}
             </div>
-
         </div>
     );
 };
